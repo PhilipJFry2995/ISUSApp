@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ISUSApp</string>
+    <string formatted="false" name="point_format">Долгота: %.3f, Широта: %.3f</string>
 </resources>

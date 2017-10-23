@@ -3,13 +3,12 @@ package com.example.dfily.isusapp.activities;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.dfily.isusapp.R;
+import com.example.dfily.isusapp.location.LocationActivityExample;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -47,10 +46,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openActivity(View view) {
-        Toast.makeText(this, "Text", Toast.LENGTH_SHORT).show();
-        Log.d("mylogs", String.valueOf(counter));
+        //Toast.makeText(this, "Text", Toast.LENGTH_SHORT).show();
+        //Log.d("mylogs", String.valueOf(counter));
 
-        //Intent intent = new Intent(this, NewActivity.class);
-        //startActivity(intent);
+        Intent intent = new Intent(this, LocationActivityExample.class);
+        startActivity(intent);
     }
 }
