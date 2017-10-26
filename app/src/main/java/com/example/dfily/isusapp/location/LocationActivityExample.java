@@ -7,7 +7,6 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -25,7 +24,8 @@ public class LocationActivityExample extends AppCompatActivity implements MyLoca
         // Запрашиваем разрешения на геолокацию
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
                 ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_ID);
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION,
+                    Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_ID);
             return;
         }
 
@@ -54,7 +54,9 @@ public class LocationActivityExample extends AppCompatActivity implements MyLoca
      * @param grantResults
      */
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode,
+                                           @NonNull String[] permissions,
+                                           @NonNull int[] grantResults) {
         if (requestCode == REQUEST_ID) {
             if (grantResults.length == 2
                     && grantResults[0] == PackageManager.PERMISSION_GRANTED
@@ -70,6 +72,6 @@ public class LocationActivityExample extends AppCompatActivity implements MyLoca
     @Override
     public void updateLocation(Location location) {
         TextView textView = (TextView) findViewById(R.id.location);
-        textView.setText(LocationFormatter.formatPoint(this, location));
+        textView.setText(LocationFormatter.formatLocation(this, location));
     }
 }

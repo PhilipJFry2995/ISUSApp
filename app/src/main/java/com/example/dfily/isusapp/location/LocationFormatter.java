@@ -13,7 +13,7 @@ import java.util.Locale;
 
 public class LocationFormatter {
 
-    public static String formatPoint(Context context, Location location){
+    public static String formatLocation(Context context, Location location){
         return String.format(Locale.US, context.getString(R.string.point_format), location.getLongitude(), location.getLatitude());
     }
 
