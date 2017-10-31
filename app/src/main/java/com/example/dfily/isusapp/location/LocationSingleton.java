@@ -126,6 +126,7 @@ public class LocationSingleton implements GoogleApiClient.ConnectionCallbacks, G
     @Override
     public void onLocationChanged(Location location) {
         Log.d("isus_app", "Получено новое местоположение");
+        lastLocation = location;
         if (lastLocation != null) {
             for (MyLocationListener listener : listeners) {
                 listener.updateLocation(lastLocation);

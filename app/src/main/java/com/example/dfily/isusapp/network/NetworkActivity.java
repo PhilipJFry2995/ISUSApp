@@ -29,7 +29,7 @@ public class NetworkActivity extends AppCompatActivity implements NetworkUpdatab
 
     @Override
     public void update(final String response) {
-        runOnUiThread(()->{
+        runOnUiThread(() -> {
             String text = logsView.getText().toString();
             text = response + "\n" + text;
             logsView.setText(text);
