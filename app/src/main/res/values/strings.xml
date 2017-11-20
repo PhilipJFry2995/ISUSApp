@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">ISUSApp</string>
     <string name="point_format" formatted="false">Долгота: %.3f, Широта: %.3f</string>
+    <string name="yes_no_string">Delete?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="title_activity_drawer">DrawerActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
 </resources>

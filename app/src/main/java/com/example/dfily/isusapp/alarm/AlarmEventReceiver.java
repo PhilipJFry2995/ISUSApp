@@ -16,7 +16,7 @@ public class AlarmEventReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        if(intent.getAction() != null && intent.getAction().equals(ACTION)){
+        if (intent.getAction() != null && intent.getAction().equals(ACTION)) {
             Log.d("mylogs", "За работу");
         }
     }

@@ -14,9 +14,11 @@ import java.util.List;
 public class WorkerAdapter extends RecyclerView.Adapter<WorkerAdapter.ViewHolder> {
 
     private List<Worker> workerList;
+    private RecyclerClicker recyclerClicker;
 
-    public WorkerAdapter(List<Worker> workerList) {
+    public WorkerAdapter(List<Worker> workerList, RecyclerClicker recyclerClicker) {
         this.workerList = workerList;
+        this.recyclerClicker = recyclerClicker;
     }
 
     // Create new views (invoked by the layout manager)
@@ -30,10 +32,18 @@ public class WorkerAdapter extends RecyclerView.Adapter<WorkerAdapter.ViewHolder
     public void onBindViewHolder(WorkerAdapter.ViewHolder holder, int position) {
         // Обновляем элемент в зависимости от данных в массиве
         Worker worker = workerList.get(position);
+
         holder.idTV.setText(String.valueOf(worker.getId()));
         holder.nameTV.setText(worker.getName());
         holder.distanceTV.setText(new StringBuilder(worker.getDistance() + " km"));
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
         holder.itemView.setOnClickListener(view -> {
+            recyclerClicker.onClick(worker);
             Log.d("mylogs", worker.getName());
         });
     }

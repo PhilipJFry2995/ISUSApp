@@ -22,8 +22,8 @@
             android:process=":remote" />
 
         <activity android:name=".service.ServiceActivity" />
-        <activity android:name=".preferences.SharedPreferencesActivity"></activity>
-        <activity android:name=".alarm.AlarmActivity"></activity>
+        <activity android:name=".preferences.SharedPreferencesActivity" />
+        <activity android:name=".alarm.AlarmActivity" />
 
         <receiver
             android:name=".alarm.AlarmEventReceiver"
@@ -40,6 +40,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".drawer.DrawerActivity"
+            android:label="@string/title_activity_drawer"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
