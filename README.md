@@ -1,2 +1,2 @@
-Iternationa StartUP School Android application for educational purposes
+Iternational StartUP School Android application for educational purposes
 
